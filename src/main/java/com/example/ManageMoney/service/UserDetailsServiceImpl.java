@@ -10,6 +10,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // ユーザー検索ロジックを実装
-        throw new UsernameNotFoundException("User not found");
+        throw new UsernameNotFoundException("User not found!!");
     }
 }
