@@ -14,12 +14,11 @@ import javax.persistence.Id;
 @NoArgsConstructor // 無引数コンストラクタを自動生成
 @AllArgsConstructor // 全フィールドを引数に持つコンストラクタを自動生成
 @Entity // JPAのエンティティとしてマーク
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String username;
     private String password;
     private String email;
