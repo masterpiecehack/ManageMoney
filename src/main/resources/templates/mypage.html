@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+</head>
+<body>
+<div class="mypage-container">
+    <h2>My Page</h2>
+    <p>Welcome back, <span th:text="${user.username}">User</span>!</p>
+    <!-- ユーザー固有の情報を表示する -->
+</div>
+</body>
+</html>
