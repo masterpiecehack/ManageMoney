@@ -1,4 +1,2 @@
 INSERT INTO users (username, password, email) VALUES
-('user1', 'password1', 'user1@example.com'),
-('user2', 'password2', 'user2@example.com'),
-('user3', 'password3', 'user3@example.com');
+('test1', '$2a$10$BQDsmp7RF5slaBl7dzQJY.dorTJ18Jc0qYNE11k3b.fSEWpWV/T8O', 'user1@example.com');
