@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Account</title>
+</head>
+<body>
+<div class="update-container">
+    <h2>Update Account</h2>
+    <!-- エラーメッセージの表示 -->
+    <div th:if="${error}" th:text="${error}" class="error-message"></div>
+    <!-- 成功メッセージの表示 -->
+    <div th:if="${message}" th:text="${message}" class="success-message"></div>
+
+    <form th:action="@{/updateAccount}" method="post">
+        <!-- ユーザー名を表示。変更不可とする。 -->
+        <div class="form-group">
+            Username:<label th:text="${user.username}"></label>
+        </div>
+        <!-- メールアドレスを変更するためのフィールド -->
+        <div class="form-group">
+            New Email:<label for="email"></label>
+            <input type="email" id="email" name="email" th:value="${user.email}" required>
+        </div>
+        <!-- 現在のパスワードを入力するためのフィールド -->
+        <div class="form-group">
+            Current Password:<label for="current-password"></label>
+            <input type="password" id="current-password" name="current-password" required>
+        </div>
+        <!-- 新しいパスワードを入力するためのフィールド -->
+        <div class="form-group">
+            New Password:<label for="new-password"></label>
+            <input type="password" id="new-password" name="new-password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

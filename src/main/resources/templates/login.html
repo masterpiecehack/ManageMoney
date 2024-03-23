@@ -7,6 +7,10 @@
 <body>
 <div class="login-container">
     <h2>Login</h2>
+    <!-- エラーメッセージの表示 -->
+    <div th:if="${error}" th:text="${error}" class="error-message"></div>
+    <!-- 成功メッセージの表示 -->
+    <div th:if="${message}" th:text="${message}" class="success-message"></div>
     <form th:action="@{/login}" method="post">
         <div class="form-group">
             <label for="username">Username:</label>

@@ -7,8 +7,17 @@
 <body>
 <div class="mypage-container">
     <h2>My Page</h2>
+    <!-- エラーメッセージの表示 -->
+    <div th:if="${error}" th:text="${error}" class="error-message"></div>
+    <!-- 成功メッセージの表示 -->
+    <div th:if="${message}" th:text="${message}" class="success-message"></div>
     <p>Welcome back, <span th:text="${user.username}">User</span>!</p>
     <!-- ユーザー固有の情報を表示する -->
+
+    <!-- アカウント情報の更新画面へのリンクを提供するボタン -->
+    <form th:action="@{/updateAccount}" method="get">
+        <button type="submit">Update Account Details</button>
+    </form>
 </div>
 </body>
 </html>
