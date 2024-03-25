@@ -4,6 +4,7 @@ import com.example.ManageMoney.entity.Users;
 import com.example.ManageMoney.repository.UsersRepository;
 import com.example.ManageMoney.security.CustomUserDetails;
 import com.example.ManageMoney.service.CustomUserDetailsService;
+import com.example.ManageMoney.service.WithDrawService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,6 +27,9 @@ public class MyPageController {
 
     @Autowired
     PasswordEncoder passwordEncoder;
+
+    @Autowired
+    WithDrawService withDrawService;
 
     @GetMapping("/mypage")
     public String showMyPage(@AuthenticationPrincipal CustomUserDetails userDetails, Model model) {
@@ -64,5 +68,11 @@ public class MyPageController {
         //アップデートが完了したことを自分の画面の先頭にメッセ―ジ表示する
         model.addAttribute("message", "アカウント情報が更新されました。");
         return "mypage";
+    }
+
+    @PostMapping("/withdraw")
+    public String withDraw(@AuthenticationPrincipal CustomUserDetails customUserDetails) {
+        withDrawService.deleteById(customUserDetails.getUser().getId());
+        return "redirect:/logout";
     }
 }
