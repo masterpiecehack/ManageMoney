@@ -14,6 +14,31 @@
     <artifactId>backend</artifactId>
     <packaging>jar</packaging>
 
-    <!-- backend プロジェクトの依存関係やプロパティなど -->
+    <!-- backend プロジェクトの依存関係 -->
+    <dependencies>
+        <!-- JUnit Jupiter (JUnit 5) の依存関係 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version> <!-- 最新の安定したバージョンにしてください -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version> <!-- 最新の安定したバージョンにしてください -->
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
+    <!-- ビルド設定 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version> <!-- JUnit 5と互換性のあるバージョンにしてください -->
+            </plugin>
+        </plugins>
+    </build>
 </project>
