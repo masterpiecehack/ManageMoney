@@ -34,7 +34,9 @@ public class SecurityConfig {
                 .defaultSuccessUrl("/mypage") // ログイン成功時のリダイレクト先
                 .permitAll()
                 .and()
-                .logout().permitAll();
+                .logout(logout -> logout
+                        .logoutUrl("/logout").logoutSuccessUrl("/login?logout")) // ログアウト後にリダイレクト
+        ;
 
         return http.build();
     }
