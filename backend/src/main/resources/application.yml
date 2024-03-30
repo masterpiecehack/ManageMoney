@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: demo
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  # DataSource
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  # JPA/Hibernate
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: none
+  # SQL script initialize
+  sql:
+    init:
+      encoding: UTF-8
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+      mode: always
+  # H2 console
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
