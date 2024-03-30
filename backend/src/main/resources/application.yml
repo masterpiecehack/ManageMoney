@@ -6,10 +6,15 @@ spring:
     suffix: .html
   # DataSource
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:oracle:thin:@//localhost:1521/orclpdb.mshome.net
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: SYSTEM
+    password: admin #本来は推奨されない
+#  datasource:
+#    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password:
   # JPA/Hibernate
   jpa:
     defer-datasource-initialization: true
